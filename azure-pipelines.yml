@@ -38,3 +38,12 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'quizapp'
     publishLocation: 'Container'
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'TestSonarCloud'
+    organization: 'tatianasanchez01'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'demoquizapp2'
+    cliProjectName: 'Quiz App'
+    cliSources: '.'
